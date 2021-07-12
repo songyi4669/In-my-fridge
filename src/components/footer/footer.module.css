@@ -1,0 +1,12 @@
+@value fridgeLightBlue, fridgeDeepBlue,fridgeWhite from '../../common/colors.css';
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 0.2em;
+  background-color: fridgeLightBlue;
+}
+
+.title {
+  color: fridgeDeepBlue;
+}
