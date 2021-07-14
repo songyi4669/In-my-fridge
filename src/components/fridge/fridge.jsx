@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Editor from '../editor/editor';
 import Footer from '../footer/footer';
 import Header from '../header/header';
+import Preview from '../preview/preview';
 import styles from './fridge.module.css';
 
 const Fridge = ({ authService }) => {
@@ -19,7 +21,11 @@ const Fridge = ({ authService }) => {
     });
     return (
         <section className={styles.fridge}>
-            <Header onLogout={onLogout}/>
+            <Header onLogout={onLogout} />
+            <div className={styles.container}>
+                <Editor />
+                <Preview />
+            </div>
             <Footer />
         </section>
     );

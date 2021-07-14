@@ -1,0 +1,13 @@
+@value fridgeLightBlue,fridgeDeepBlue,fridgeWhite,fridgeLightPink,fridgeDarkPink from '../../common/colors.css';
+
+.editor {
+  flex-basis: 50%;
+  background-color: wheat;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+  color: fridgeDeepBlue;
+}
