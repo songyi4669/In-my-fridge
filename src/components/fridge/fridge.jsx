@@ -51,11 +51,16 @@ const Fridge = ({ authService }) => {
             }
         });
     });
+
+    const addItem = item => {
+        const updated = [...items, item];
+        setItems(updated);
+};
     return (
         <section className={styles.fridge}>
             <Header onLogout={onLogout} />
             <div className={styles.container}>
-                <Editor items={items}/>
+                <Editor items={items} addItem={addItem}/>
                 <Preview items={items}/>
             </div>
             <Footer />
