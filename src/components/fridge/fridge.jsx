@@ -7,8 +7,8 @@ import Preview from '../preview/preview';
 import styles from './fridge.module.css';
 
 const Fridge = ({ authService }) => {
-    const [items, setItems] = useState([
-        {
+    const [items, setItems] = useState({
+        '1': {
             id: '1',
             name: 'Apple',
             location:'냉장',
@@ -18,7 +18,7 @@ const Fridge = ({ authService }) => {
             fileName: 'apple',
             fileURL: null,
         },
-        {
+        '2':{
             id: '2',
             name: 'Milk',
             location:'냉동',
@@ -28,7 +28,7 @@ const Fridge = ({ authService }) => {
             fileName: 'milk',
             fileURL: 'milk.png'
         },
-        {
+        '3': {
             id: '3',
             name: 'Abocado',
             location:'냉장',
@@ -38,7 +38,7 @@ const Fridge = ({ authService }) => {
             fileName: 'avocado',
             fileURL: 'avocado.png'
         }
-    ]);
+    });
     const history = useHistory();
     const onLogout = () => {
         authService.logout();
@@ -52,15 +52,30 @@ const Fridge = ({ authService }) => {
         });
     });
 
-    const addItem = item => {
-        const updated = [...items, item];
-        setItems(updated);
+    const createOrUpdateItem = item => {
+        setItems(items => {
+            const updated = { ...items };
+            updated[item.id] = item;
+            return updated;
+        });
+    };
+    const deleteItem = item => {
+        setItems(items => {
+            const updated = { ...items };
+            delete updated[item.id];
+            return updated;
+        });
 };
     return (
         <section className={styles.fridge}>
             <Header onLogout={onLogout} />
             <div className={styles.container}>
-                <Editor items={items} addItem={addItem}/>
+                <Editor
+                    items={items}
+                    addItem={createOrUpdateItem}
+                    updateItem={createOrUpdateItem}
+                    deleteItem={deleteItem}
+                />
                 <Preview items={items}/>
             </div>
             <Footer />
