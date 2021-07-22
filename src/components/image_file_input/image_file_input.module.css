@@ -1,0 +1,26 @@
+@value fridgeLightBlue, fridgeDeepBlue from '../../common/colors.css';
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.input {
+  display: none;
+}
+
+.button {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: fridgeLightBlue;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: fridgeDeepBlue;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

@@ -6,7 +6,7 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './fridge.module.css';
 
-const Fridge = ({ authService }) => {
+const Fridge = ({ FileInput, authService }) => {
     const [items, setItems] = useState({
         '1': {
             id: '1',
@@ -71,6 +71,7 @@ const Fridge = ({ authService }) => {
             <Header onLogout={onLogout} />
             <div className={styles.container}>
                 <Editor
+                    FileInput={FileInput}
                     items={items}
                     addItem={createOrUpdateItem}
                     updateItem={createOrUpdateItem}

@@ -1,9 +1,8 @@
 import React, {useRef} from 'react';
 import styles from './item_edit_form.module.css';
 import Button from '../button/button';
-import ImageFileInput from '../image_file_input/image_file_input';
 
-const ItemEditForm = ({ item, updateItem, deleteItem }) => {
+const ItemEditForm = ({ FileInput, item, updateItem, deleteItem }) => {
     const formRef = useRef();
     const nameRef=useRef();
     const locationRef=useRef();
@@ -20,6 +19,14 @@ const ItemEditForm = ({ item, updateItem, deleteItem }) => {
         fileName,
         fileURL,
     } = item;
+    
+    const onFileChange = file => {
+        updateItem({
+            ...item,
+            fileNmae: file.name,
+            fileURL: file.url,
+        });
+    };
 
     const onChange = (event) => {
         if (event.currentTarget == null) {
@@ -80,7 +87,7 @@ const ItemEditForm = ({ item, updateItem, deleteItem }) => {
                 
                 </textarea>
             <div className={styles.fileInput}>
-                <ImageFileInput />
+                <FileInput name={fileName} onFileChange={onFileChange}/>
             </div>
             <Button name='Delete' onClick={onSubmit} />
         </form>
