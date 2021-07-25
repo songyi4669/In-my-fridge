@@ -17,7 +17,6 @@ const ItemEditForm = ({ FileInput, item, updateItem, deleteItem }) => {
         expirationdate,
         memo,
         fileName,
-        fileURL,
     } = item;
     
     const onFileChange = file => {
