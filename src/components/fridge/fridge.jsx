@@ -6,47 +6,20 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './fridge.module.css';
 
-const Fridge = ({ FileInput, authService }) => {
-    const [items, setItems] = useState({
-        '1': {
-            id: '1',
-            name: 'Apple',
-            location:'냉장',
-            datepurchased: '2021-07-15',
-            expirationdate: '2021-07-22',
-            memo: 'apple pie',
-            fileName: 'apple',
-            fileURL: null,
-        },
-        '2':{
-            id: '2',
-            name: 'Milk',
-            location:'냉동',
-            datepurchased: '2021-07-12',
-            expirationdate: '2021-07-18',
-            memo: 'milk',
-            fileName: 'milk',
-            fileURL: 'milk.png'
-        },
-        '3': {
-            id: '3',
-            name: 'Abocado',
-            location:'냉장',
-            datepurchased: '2021-07-13',
-            expirationdate: '2021-07-23',
-            memo: 'salad',
-            fileName: 'avocado',
-            fileURL: 'avocado.png'
-        }
-    });
+const Fridge = ({ FileInput, authService, itemRepository }) => {
     const history = useHistory();
+    const historyState = history?.location?.state;
+    const [items, setItems] = useState({});
+    const [userId, setUserId] = useState(historyState && historyState.id);
     const onLogout = () => {
         authService.logout();
     };
 
     useEffect(() => {
         authService.onAuthChange(user => {
-            if (!user) {
+            if (user) {
+                setUserId(user.uid);
+            } else {
                 history.push('/');
             }
         });
@@ -58,6 +31,7 @@ const Fridge = ({ FileInput, authService }) => {
             updated[item.id] = item;
             return updated;
         });
+        itemRepository.saveItem(userId, item);
     };
     const deleteItem = item => {
         setItems(items => {
@@ -65,6 +39,7 @@ const Fridge = ({ FileInput, authService }) => {
             delete updated[item.id];
             return updated;
         });
+        itemRepository.removeItem(userId, item);
 };
     return (
         <section className={styles.fridge}>
