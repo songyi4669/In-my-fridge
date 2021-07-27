@@ -16,6 +16,16 @@ const Fridge = ({ FileInput, authService, itemRepository }) => {
     };
 
     useEffect(() => {
+        if (!userId) {
+            return;
+        }
+        const stopSync = itemRepository.syncItems(userId, items => {
+            setItems(items);
+        })
+        return () => stopSync();
+    }, [userId]);
+
+    useEffect(() => {
         authService.onAuthChange(user => {
             if (user) {
                 setUserId(user.uid);
