@@ -23,7 +23,7 @@ const Fridge = ({ FileInput, authService, itemRepository }) => {
             setItems(items);
         })
         return () => stopSync();
-    }, [userId]);
+    }, [userId, itemRepository]);
 
     useEffect(() => {
         authService.onAuthChange(user => {
@@ -33,7 +33,7 @@ const Fridge = ({ FileInput, authService, itemRepository }) => {
                 history.push('/');
             }
         });
-    });
+    }, [userId, authService, history]);
 
     const createOrUpdateItem = item => {
         setItems(items => {

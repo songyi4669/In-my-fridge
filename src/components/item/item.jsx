@@ -11,13 +11,12 @@ const Item = ({ item }) => {
         datepurchased,
         expirationdate,
         memo,
-        fileName,
         fileURL,
     } = item;
     const url = fileURL || DEFAULT_IMAGE;
     return (
         <li className={`${styles.item} ${getLocation(location)}`}>
-            <img className={styles.image} src={url} alt="기본 이미지" />
+            <img className={styles.image} src={url} alt="아이템" />
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>
                 <p className={styles.datepurchased}>{datepurchased}</p>
