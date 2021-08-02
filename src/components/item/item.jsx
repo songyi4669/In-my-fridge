@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo }from 'react';
 import styles from './item.module.css';
 
 
 const DEFAULT_IMAGE = '/images/default_logo.jpg';
 
-const Item = ({ item }) => {
+const Item = memo(({ item }) => {
     const {
         name,
         location,
@@ -25,7 +25,7 @@ const Item = ({ item }) => {
             </div>
         </li>
     );
-};
+});
 
 function getLocation(location) {
     switch (location) {

@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import styles from './item_add_form.module.css';
 import Button from '../button/button';
 
-const ItemAddForm = ({ FileInput, onAdd }) => {
+const ItemAddForm = memo(({ FileInput, onAdd }) => {
     const formRef = useRef();
     const nameRef=useRef();
     const locationRef=useRef();
@@ -79,6 +79,6 @@ const ItemAddForm = ({ FileInput, onAdd }) => {
             <Button name='Add' onClick={onSubmit} />
         </form>
     )
-};
+});
 
 export default ItemAddForm;

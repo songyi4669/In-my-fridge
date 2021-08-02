@@ -2,5 +2,14 @@
     "workbench.colorCustomizations": {
         "titleBar.activeBackground": "#3f8d3f",
         "titleBar.inactiveBackground": "#3f8d3f"
+    },
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "emmet.syntaxProfiles": {
+        "html": {
+            "inline_break": 1
+        }
     }
 }
