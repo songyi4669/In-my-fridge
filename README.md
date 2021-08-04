@@ -22,6 +22,7 @@
 - Firebase
 - Cloudinary
 
+
 ## 기능 상세
 ### 1. 기존 소셜 계정으로 로그인 가능
 - Firebase로 기존 소셜 계정으로 로그인이 가능합니다.
@@ -48,3 +49,17 @@
 ### 7. 반응형으로 보다 보기 편한 UI
 - 반응형 CSS로 브라우저 크기에 따라 냉장고 채우기/냉장고 속 위치가 변경됩니다.
 
+
+## 성능 개선
+### 1. memo를 사용하여 불필요한 업데이트 제거
+- 아이템 수정 시 업데이트 되는   
+ header, footer, image_file_input, item, add_form, button을   
+ memo로 업데이트가 발생하지 않도록 합니다. 
+- onLogout부분의 리랜더를 막기 위해 useCallback을 사용합니다.
+```javascript
+    const onLogout = useCallback(() => {
+        authService.logout();
+    }, [authService]);
+```
+([authService]을 통해 authService변경 시에는 새로운 콜백이 되도록 해줍니다.)
+ 
