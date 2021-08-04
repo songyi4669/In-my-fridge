@@ -50,11 +50,14 @@
 - 반응형 CSS로 브라우저 크기에 따라 냉장고 채우기/냉장고 속 위치가 변경됩니다.
 
 
+
 ## 성능 개선
 ### 1. memo를 사용하여 불필요한 업데이트 제거
 - 아이템 수정 시 업데이트 되는   
  header, footer, image_file_input, item, add_form, button을   
  memo로 업데이트가 발생하지 않도록 합니다. 
+ 
+ ### 2. onLogout에 useCallback사용
 - onLogout부분의 리랜더를 막기 위해 useCallback을 사용합니다.
 ```javascript
     const onLogout = useCallback(() => {
