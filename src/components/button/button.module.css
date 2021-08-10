@@ -1,12 +1,14 @@
-@value fridgeLightBlue, fridgeDeepBlue,fridgeWhite from '../../common/colors.css';
+@value fridgeDarkGreen, fridgeWhite from '../../common/colors.css';
 .button {
-  background-color: fridgeDeepBlue;
+  background-color: fridgeDarkGreen;
   color: fridgeWhite;
   font-weight: bold;
   cursor: pointer;
   padding: 0.5em;
   flex: 1 1 50%;
   font-size: 0.8rem;
+  border: 0;
+  outline: 0;
 }
 
 .button:hover {

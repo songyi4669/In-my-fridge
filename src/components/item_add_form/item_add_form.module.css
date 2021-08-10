@@ -1,11 +1,11 @@
-@value fridgeLightBlue, fridgeDeepBlue,fridgeWhite from '../../common/colors.css';
+@value fridgeWhite from '../../common/colors.css';
 
 .form {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  border-top: 1px solid fridgeDeepBlue;
-  border-left: 1px solid fridgeDeepBlue;
+  border-top: 1px solid #a4a4a4;
+  border-left: 1px solid #a4a4a4;
   margin-bottom: 1em;
 }
 
@@ -18,8 +18,8 @@
   width: 100%;
   border: 0;
   padding: 0.5em;
-  border-bottom: 1px solid fridgeDeepBlue;
-  border-right: 1px solid fridgeDeepBlue;
+  border-bottom: 1px solid #a4a4a4;
+  border-right: 1px solid #a4a4a4;
   background-color: fridgeWhite;
 }
 
@@ -42,4 +42,5 @@
 
 .textarea {
   flex-basis: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }

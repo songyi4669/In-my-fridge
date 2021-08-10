@@ -1,4 +1,4 @@
-@value fridgeLightBlue, fridgeDeepBlue, fridgeLightPink, fridgeDarkPink  from '../../common/colors.css';
+@value fridgeWhite, fridgeDark, fridgeDeepGreen, fridgeLightGreen  from '../../common/colors.css';
 
 .container {
   width: 100%;
@@ -20,15 +20,15 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 0.8rem;
-  color: fridgeDeepBlue;
+  color: fridgeDark;
 }
 
 .button.lightblue {
-  background-color: fridgeLightBlue;
+  background-color: fridgeWhite;
 }
 
 .button.pink {
-  background-color: fridgeLightPink;
+  background-color: fridgeLightGreen;
 }
 
 .button:hover {
@@ -39,8 +39,8 @@
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
-  border: 2px solid fridgeLightBlue;
-  border-top: 3px solid fridgeDarkPink;
+  border: 2px solid fridgeDark;
+  border-top: 3px solid fridgeLightGreen;
   animation: spin 2s linear infinite;
 }
 

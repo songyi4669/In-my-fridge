@@ -1,4 +1,4 @@
-@value fridgeLightGreen,fridgeBlue from '../../common/colors.css';
+@value fridgeLightGreen,fridgeDeepGreen,fridgeGreen from '../../common/colors.css';
 
 .item {
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .item.frozen {
-  background-color: fridgeBlue;
+  border: 1px solid fridgeGreen;
 }
 
 .image {
@@ -40,6 +40,10 @@
   margin-bottom: 0.3em;
 }
 
+.expirationdate {
+  margin-bottom: 1em;
+}
+
 .name {
   font-size: 1.2rem;
 }
@@ -48,7 +52,7 @@
   content: "";
   display: block;
   width: 90%;
-  height: 1.5px;
-  background-color: wheat;
-  transform: translateY(0.3em);
+  height: 1px;
+  background-color: fridgeGreen;
+  transform: translateY(0.4em);
 }

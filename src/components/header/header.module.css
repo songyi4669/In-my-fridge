@@ -1,16 +1,22 @@
-@value fridgeLightBlue, fridgeDeepBlue,fridgeWhite from '../../common/colors.css';
+@value fridgeDeepGreen, fridgeWhite, fridgeDarkGreen from '../../common/colors.css';
 
 .header {
   width: 100%;
   text-align: center;
   padding: 0.5em;
-  background-color: fridgeLightBlue;
+  background-color: fridgeWhite;
   position: relative;
+  margin-bottom: 0.5em;
+}
+
+.logo {
+  width: 2rem;
+  margin-top: 0.4rem;
 }
 
 .title {
   margin: 0;
-  color: fridgeDeepBlue;
+  color: fridgeDarkGreen;
 }
 
 .logout {
@@ -18,8 +24,8 @@
   right: 2.5rem;
   top: 1rem;
   padding: 0.5rem;
-  border-radius: 20%;
-  background-color: fridgeDeepBlue;
+  border-radius: 10%;
+  background-color: fridgeDarkGreen;
   color: fridgeWhite;
   outline: 0;
   border: 0;

@@ -5,7 +5,7 @@ import styles from './editor.module.css';
 
 const Editor = ({FileInput, items, addItem, updateItem, deleteItem}) => (
     <section className={styles.editor}>
-        <h1 className={styles.title}>냉장고 채우기</h1>
+        <h1 className={styles.title}>✍ 냉장고 채우기</h1>
         {Object.keys(items).map(key => (
             <ItemEditForm
                 key={key}

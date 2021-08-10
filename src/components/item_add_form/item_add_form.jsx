@@ -41,36 +41,36 @@ const ItemAddForm = memo(({ FileInput, onAdd }) => {
                 className={styles.input}
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="이름"
             />
             <select
                 ref={locationRef}
                 className={styles.select}
                 name="location"
-                placeholder="Location"
+                placeholder="저장소"
             >
-                <option placeholder="refrigerated">냉장</option>
-                <option placeholder="frozen">냉동</option>
+                <option placeholder="냉장" value="refrigerated">냉장</option>
+                <option placeholder="냉동" value="frozen">냉동</option>
             </select>
             <input
                 ref={datepurchasedRef}
                 className={styles.input}
                 type="text" 
                 name="datepurchased"
-                placeholder="Datepurchased"
+                placeholder="구입 날짜"
             />
             <input
                 ref={expirationdateRef}
                 className={styles.input}
                 type="text"
                 name="expirationdate"
-                placeholder="Expirationdate"
+                placeholder="유통기한"
             />
             <textarea
                 ref={memoRef}
                 className={styles.textarea}
                 name="memo"
-                placeholder="Memo"
+                placeholder="메모"
             >
                 </textarea>
             <div className={styles.fileInput}>
