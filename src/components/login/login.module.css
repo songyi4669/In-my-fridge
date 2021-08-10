@@ -1,4 +1,4 @@
-@value fridgeLightBlue,fridgeDeepBlue,fridgeWhite,fridgeLightPink,fridgeDarkPink from '../../common/colors.css';
+@value fridgeWhite,fridgeLightGreen,fridgeDarkGreen,fridgeDark from '../../common/colors.css';
 
 .login {
   width: 30em;
@@ -26,14 +26,15 @@
   height: 2em;
   font-size: 1.2rem;
   border-radius: 1.5rem;
-  color: fridgeDeepBlue;
+  color: fridgeDark;
   font-weight: bold;
-  background-color: fridgeDarkPink;
+  background-color: fridgeLightGreen;
   cursor: pointer;
   border: 0;
   outline: 0;
 }
 
 .button:hover {
-  background-color: fridgeLightPink;
+  background-color: fridgeDarkGreen;
+  color: fridgeWhite;
 }
