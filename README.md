@@ -1,6 +1,9 @@
 # What-is-in-my-fridge 🧊🧅🥦
 https://song-fridge.netlify.app
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/81962246/129341557-e2e6ffdb-918c-4f51-aac9-9e0f5c71ed56.gif)
+
+
 ## 소개
 -냉장고에 있는 식자재를 등록하여 앱으로 관리할 수 있는 프로젝트 입니다.
 
